@@ -2,18 +2,20 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import {
-  CCloseButton,
+  CCloseButton, CImage,
   CSidebar,
   CSidebarBrand,
   CSidebarFooter,
   CSidebarHeader,
-  CSidebarToggler,
-} from '@coreui/react'
+  CSidebarToggler
+} from "@coreui/react";
 import CIcon from '@coreui/icons-react'
 
 import { AppSidebarNav } from './AppSidebarNav'
 
-import { logo } from 'src/assets/brand/logo'
+//import { logo } from 'src/assets/brand/logo'
+import logo from 'src/assets/brand/VizoVote.png'
+
 import { sygnet } from 'src/assets/brand/sygnet'
 
 // sidebar nav config
@@ -37,7 +39,8 @@ const AppSidebar = () => {
     >
       <CSidebarHeader className="border-bottom">
         <CSidebarBrand to="/">
-          <CIcon customClassName="sidebar-brand-full" icon={logo} height={32} />
+          <CImage  customClassName="sidebar-brand-full"  src={logo} style={{width:'100%',maxHeight:'5rem'}} />
+
           <CIcon customClassName="sidebar-brand-narrow" icon={sygnet} height={32} />
         </CSidebarBrand>
         <CCloseButton

@@ -1,1 +1,76 @@
-// Here you can add other styles
+.no-values .c-widget-stats-d__values {
+  display: none; /* Hide the values container */
+}
+.carousel-row {
+  margin: auto;
+  width: 80% ;
+  box-sizing: border-box;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgb(63, 68, 78); /* Custom color for the icons */
+  border-radius:50%; /* Optional: Make them circular */
+  width: 2rem; /* Adjust size */
+  height: 2rem; /* Adjust size */
+  margin-top: 1rem;
+  //border: 3px solid rgb(63, 68, 78);
+}
+
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgb(42, 48, 61); /* Darker on hover */
+}
+.dark .carousel-control-prev-icon,
+.dark .carousel-control-next-icon {
+  background-color: rgba(255, 255, 255, 0.5); /* Dark mode color */
+}
+
+.dark .carousel-control-prev-icon:hover,
+.dark .carousel-control-next-icon:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Dark mode hover color */
+}
+
+.custom-carousel .carousel-indicators {
+  position: absolute;
+  top: 80%; /* Adjust as needed */
+  right: 38%;
+  transform: translateX(60%);
+  //color: rgba(87, 23, 23, 0.8);
+}
+
+
+
+
+.back-country{
+  display: flex;
+  align-content: center;
+  width:80%;
+  padding: 30px 30px 0 50px;
+  height:100%;
+  //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position:relative;
+  margin: 11px auto;
+}
+
+
+
+
+
+.back{
+  display: flex;
+  align-content: center;
+  width:100%;
+  padding: 10px;
+  height:100%;
+  //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position:relative;
+  margin: auto;
+}
+.map-container {
+  margin: auto;
+  background-color: transparent;
+  position:relative;
+  width:150%;
+
+}

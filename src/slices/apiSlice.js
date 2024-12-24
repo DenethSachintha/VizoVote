@@ -5,7 +5,7 @@ const baseQuery = fetchBaseQuery({baseUrl: 'http://34.239.89.57:4000'})
 
 //Parent for any other API Slices
 export const apiSlice = createApi({
-  baseQuery, 
+  baseQuery,
   tagTypes : ["User"],
   endpoints: (builder)=> ({})
 })

@@ -2,8 +2,8 @@ import React, { Suspense, useEffect } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import 'react-toastify/dist/ReactToastify.css'; 
-import { ToastContainer, toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 import { CSpinner, useColorModes } from '@coreui/react'
 import './scss/style.scss'
 
