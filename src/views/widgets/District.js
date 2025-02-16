@@ -28,7 +28,6 @@ const District = ({ districtId, pollingCenters }) => {
     const filteredCenters = pollingCenters.filter(
       (center) => center.district === activeTab // Match `center.district` with `activeTab`
     );
-
     setDistrictPollingCenters(filteredCenters); // Update state
     // Use a separate log to inspect the filtered results immediately
     console.log("Filtered Centers:", filteredCenters);
@@ -37,7 +36,7 @@ const District = ({ districtId, pollingCenters }) => {
   const aggregatePollingCenterVotes = () => {
     const partyColors = {
       'party A': '#5856d6',
-      'party B': '#6b7785',
+      'party B': '#F7A072',
       'party C': '#1b9e3e',
       'party D': '#DD1B16',
       'party E': '#f9b115',
@@ -72,7 +71,7 @@ const District = ({ districtId, pollingCenters }) => {
   const calculatePartyVotes = () => {
     const totalVotes = [
       { party: 'Party A', color: '#5856d6', votes: 0 },
-      { party: 'Party B', color: '#6b7785', votes: 0 },
+      { party: 'Party B', color: '#F7A072', votes: 0 },
       { party: 'Party C', color: '#1b9e3e', votes: 0 },
       { party: 'Party D', color: '#DD1B16', votes: 0 },
       { party: 'Party E', color: '#f9b115', votes: 0 },

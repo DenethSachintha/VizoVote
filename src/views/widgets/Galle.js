@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { CCard, CCardBody, CCardHeader, CCardText, CCol, CPopover, CProgress, CRow } from "@coreui/react";
 import { CChartDoughnut } from '@coreui/react-chartjs'
 import 'src/scss/_custom.scss'
+import PollingCenters from "src/views/widgets/PollingCenters";
 
 const  Galle = ({ parties, updatedPollingCenters }) => {
   const [totalVotes, setTotalVotes] = useState(0)
@@ -23,13 +24,13 @@ const  Galle = ({ parties, updatedPollingCenters }) => {
 
   return (
     <>
-
-
-
       <CCard className="mb-2 " style={{ width: '100%' }}>
         <CCardHeader><strong>Galle District Results</strong></CCardHeader>
       </CCard>
       <CRow>
+        <CCol md={12}>
+          <PollingCenters pollingCenters={updatedPollingCenters}/>
+        </CCol>
         <CCol md={6} xs={12} className="m-md-0">
           <CCard className="mb-2 m-md-0">
             <CCardBody>
@@ -38,10 +39,9 @@ const  Galle = ({ parties, updatedPollingCenters }) => {
                     <svg
                       height="430.65600000000006"
                       version="1.1"
-                      width="430.656"
                       xmlns="http://www.w3.org/2000/svg"
                       xmlnsXlink="http://www.w3.org/1999/xlink"
-                      style={{ overflow: 'hidden', position: 'relative', left: '-0.5px', top: '-0.078125px' }}
+                      style={{ overflow: 'hidden',maxWidth:"100%" ,position:"relative" , left: '-0.5px', top: '-0.078125px' }}
                       viewBox="0 0 600 600"
                       preserveAspectRatio="xMinYMin"
                     >

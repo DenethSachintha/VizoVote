@@ -79,8 +79,9 @@ const Login = () => {
             lastLoginAt: user.metadata?.lastLoginAt || "",
           };
           dispatch(setCredentials(serializedUser))
-          navigate('/dashboard')
           toast.success("You're  logged in")})
+          navigate('/dashboard')
+
         .catch((error) => {
           console.error(error);
           let errMsg;

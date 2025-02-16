@@ -53,6 +53,13 @@
   margin: 11px auto;
 }
 
+.map-container-country {
+  margin: auto;
+  background-color: transparent;
+  position:relative;
+  width:150%;
+
+}
 
 
 
@@ -61,16 +68,13 @@
   display: flex;
   align-content: center;
   width:100%;
-  padding: 10px;
+  padding: 40px 10px 0 10px;
   height:100%;
-  //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position:relative;
   margin: auto;
 }
 .map-container {
   margin: auto;
   background-color: transparent;
-  position:relative;
-  width:150%;
-
+  width:100%;
+  align-items: center;
 }

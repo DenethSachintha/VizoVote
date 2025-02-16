@@ -117,7 +117,7 @@ const Dashboard = () => {
   const calculatePartyVotes = () => {
     const Votes = [
       { party: 'Party A', color: '#5856d6', votes: 0 },
-      { party: 'Party B', color: '#6b7785', votes: 0 },
+      { party: 'Party B', color: '#F7A072', votes: 0 },
       { party: 'Party C', color: '#1b9e3e', votes: 0 },
       { party: 'Party D', color: '#DD1B16', votes: 0 },
       { party: 'Party E', color: '#f9b115', votes: 0 },
@@ -140,7 +140,7 @@ const Dashboard = () => {
   const aggregateDistrictVotes = () => {
     const partyColors = {
       'party A': '#5856d6',
-      'party B': '#6b7785',
+      'party B': '#F7A072',
       'party C': '#1b9e3e',
       'party D': '#DD1B16',
       'party E': '#f9b115',
@@ -225,21 +225,24 @@ const Dashboard = () => {
 
   return (
     <>
-      <PollingCenters />
-
       {showDistrict ? (
         <District districtId={district} pollingCenters={pollingCenters} />
       ) : (
         <>
           <CCard className="mb-2 " style={{ width: '100%' }}>
-            <CCardHeader><strong>All Island Results</strong></CCardHeader>
+            <CCardHeader>
+              <strong>All Island Results</strong>
+            </CCardHeader>
           </CCard>
           <CRow>
+            <CCol md={12}>
+              <PollingCenters pollingCenters={pollingCenters}/>
+            </CCol>
             <CCol md={6} xs={12} className="m-md-0">
               <CCard className="mb-2 m-md-0">
                 <CCardBody>
                   <div className="back-country">
-                    <div className="map-container">
+                    <div className="map-container-country">
                       <svg viewBox="0 0 349.68774 675.54926" xmlns="http://www.w3.org/2000/svg">
                         <CPopover
                           trigger={['hover', 'focus']}
@@ -609,7 +612,7 @@ const Dashboard = () => {
                           responsive: true,
                           maintainAspectRatio: false,
                         }}
-                        style={{ height: 'auto', width: '100%',maxWidth: '600px', }}
+                        style={{ height: 'auto', width: '100%', maxWidth: '600px' }}
                       />
                     </CCol>
 

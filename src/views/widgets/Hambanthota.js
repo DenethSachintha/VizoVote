@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { CCard, CCardBody, CCardHeader, CCardText, CCol, CPopover, CProgress, CRow } from "@coreui/react";
 import { CChartDoughnut } from '@coreui/react-chartjs'
 import 'src/scss/_custom.scss'
+import PollingCenters from "src/views/widgets/PollingCenters";
 
 const Hambanthota = ({ parties, updatedPollingCenters }) => {
   const [totalVotes, setTotalVotes] = useState(0)
@@ -29,6 +30,9 @@ const Hambanthota = ({ parties, updatedPollingCenters }) => {
         <CCardHeader><strong>Hambanthota District Results</strong></CCardHeader>
       </CCard>
       <CRow>
+        <CCol md={12}>
+          <PollingCenters pollingCenters={updatedPollingCenters}/>
+        </CCol>
         <CCol md={6} xs={12} className="m-md-0">
           <CCard className="mb-2 m-md-0">
             <CCardBody>
@@ -42,7 +46,7 @@ const Hambanthota = ({ parties, updatedPollingCenters }) => {
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     style={{
                       overflow: 'hidden',
-                      position: 'relative',
+                      position: 'relative',maxWidth:"100%" ,
                       left: '-0.5px',
                       top: '0.921875px',
                     }}
