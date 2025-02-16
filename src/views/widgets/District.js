@@ -20,18 +20,7 @@ const District = ({ districtId, pollingCenters }) => {
   const [parties, setParties] = useState([])
   const [loading, setLoading] = useState(true) // Loading state to manage data readiness
   const [updatedPollingCenters, setUpdatedPollingCenters] = useState([])
-  useEffect(() => {
-    setActiveTab(districtId);
-  }, [districtId]);
 
-  useEffect(() => {
-    const filteredCenters = pollingCenters.filter(
-      (center) => center.district === activeTab // Match `center.district` with `activeTab`
-    );
-    setDistrictPollingCenters(filteredCenters); // Update state
-    // Use a separate log to inspect the filtered results immediately
-    console.log("Filtered Centers:", filteredCenters);
-  }, [activeTab, pollingCenters]);
 
   const aggregatePollingCenterVotes = () => {
     const partyColors = {
@@ -66,6 +55,7 @@ const District = ({ districtId, pollingCenters }) => {
     })
 
     setUpdatedPollingCenters(updatedPollingCenters)
+    console.log(updatedPollingCenters)
   }
 
   const calculatePartyVotes = () => {
@@ -90,40 +80,60 @@ const District = ({ districtId, pollingCenters }) => {
     setParties(totalVotes)
     console.log('Calculated Total Votes:', totalVotes)
   }
-  useEffect(() => {
-    if (districtPollingCenters.length > 0) {
-      calculatePartyVotes()
-      aggregatePollingCenterVotes()
-      console.log('Updated Polling Centers with Max Party Details:', updatedPollingCenters)
-      setLoading(false)
-    } else {
-      console.log('No polling centers available.')
-    }
-  }, [activeTab,pollingCenters,districtPollingCenters])
+
   const renderContent = () => {
-    if (districtPollingCenters.length === 0) {
+    if (districtPollingCenters.length === 0 || loading) {
       return (
         <div>
-          <p>No polling centers available in this district.</p>
+          <p>No polling centers available in this district. or loading</p>
         </div>
       );
     }
     switch (activeTab) {
       case "LK-31":
-        return <Galle updatedPollingCenters={updatedPollingCenters} parties={parties} />;
+        return updatedPollingCenters && <Galle updatedPollingCenters={updatedPollingCenters} parties={parties} />;
       case "LK-33":
-        return <Hambanthota updatedPollingCenters={updatedPollingCenters} parties={parties} />;
+        return updatedPollingCenters && <Hambanthota updatedPollingCenters={updatedPollingCenters} parties={parties} />;
       case "LK-82":
-        return <Monaragala updatedPollingCenters={updatedPollingCenters} parties={parties} />;
+        return updatedPollingCenters && <Monaragala updatedPollingCenters={updatedPollingCenters} parties={parties} />;
       default:
-        return null;
+        return <p>No district.</p>;
     }
   };
+
+  useEffect(() => {
+    setActiveTab(districtId);
+  }, [districtId]);
+
+  useEffect(() => {
+    const filteredCenters = pollingCenters.filter(
+      (center) => center.district === activeTab // Match `center.district` with `activeTab`
+    );
+    setDistrictPollingCenters(filteredCenters);
+    console.log("Filtered Centers:", filteredCenters);
+  }, [activeTab, pollingCenters]);
+
+  useEffect(() => {
+    if (districtPollingCenters.length > 0) {
+      setLoading(true)
+      setUpdatedPollingCenters([]);
+      setParties([])
+      calculatePartyVotes();
+      aggregatePollingCenterVotes()
+      setLoading(false)
+
+    } else {
+      console.log('No polling centers available.')
+    }
+  }, [,districtPollingCenters])
+
+  useEffect(() => {
+    console.log('Updated Polling Centers with Max Party Details:', updatedPollingCenters)
+  }, [updatedPollingCenters]);
 
   if (loading) {
     return <div>Loading...</div>;
   }
-
   return (<>
     <CCol className='mb-2'>
       <CCard>
@@ -166,7 +176,6 @@ const District = ({ districtId, pollingCenters }) => {
     </CCol>
       <CCol>
         <CCardBody className='m-0'>{renderContent()}</CCardBody>
-
       </CCol>
 
     </>

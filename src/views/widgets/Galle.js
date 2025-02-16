@@ -66,7 +66,7 @@ const  Galle = ({ parties, updatedPollingCenters }) => {
                         }}
                       />
                       <path
-                        fill={updatedPollingCenters[4].color}
+                        fill={updatedPollingCenters[4]?.color}
                         onClick={() => {
                           console.log(updatedPollingCenters[4].name)
                         }}
@@ -85,7 +85,7 @@ const  Galle = ({ parties, updatedPollingCenters }) => {
                         }}
                       />
                       <path
-                        fill={updatedPollingCenters[9].color}
+                        fill={updatedPollingCenters[9]?.color}
                         onClick={() => {
                           console.log(updatedPollingCenters[9].name)
                         }}
@@ -104,7 +104,7 @@ const  Galle = ({ parties, updatedPollingCenters }) => {
                         }}
                       />
                       <path
-                        fill={updatedPollingCenters[7].color}
+                        fill={updatedPollingCenters[7]?.color}
                         onClick={() => {
                           console.log(updatedPollingCenters[7].name)
                         }}
@@ -123,7 +123,7 @@ const  Galle = ({ parties, updatedPollingCenters }) => {
                         }}
                       />
                       <path
-                        fill={updatedPollingCenters[6].color}
+                        fill={updatedPollingCenters[6]?.color}
                         onClick={() => {
                           console.log(updatedPollingCenters[6].name)
                         }}
@@ -142,7 +142,7 @@ const  Galle = ({ parties, updatedPollingCenters }) => {
                         }}
                       />
                       <path
-                        fill={updatedPollingCenters[0].color}
+                        fill={updatedPollingCenters[0]?.color}
                         onClick={() => {
                           console.log(updatedPollingCenters[0].name)
                         }}
@@ -161,7 +161,7 @@ const  Galle = ({ parties, updatedPollingCenters }) => {
                         }}
                       />
                       <path
-                        fill={updatedPollingCenters[5].color}
+                        fill={updatedPollingCenters[5]?.color}
                         onClick={() => {
                           console.log(updatedPollingCenters[5].name)
                         }}
@@ -180,7 +180,7 @@ const  Galle = ({ parties, updatedPollingCenters }) => {
                         }}
                       />
                       <path
-                        fill={updatedPollingCenters[3].color}
+                        fill={updatedPollingCenters[3]?.color}
                         onClick={() => {
                           console.log(updatedPollingCenters[3].name)
                         }}
@@ -199,7 +199,7 @@ const  Galle = ({ parties, updatedPollingCenters }) => {
                         }}
                       />
                       <path
-                        fill={updatedPollingCenters[1].color}
+                        fill={updatedPollingCenters[1]?.color}
                         onClick={() => {
                           console.log(updatedPollingCenters[1].name)
                         }}
@@ -218,7 +218,7 @@ const  Galle = ({ parties, updatedPollingCenters }) => {
                         }}
                       />
                       <path
-                        fill={updatedPollingCenters[8].color}
+                        fill={updatedPollingCenters[8]?.color}
                         onClick={() => {
                           console.log(updatedPollingCenters[8].name)
                         }}
